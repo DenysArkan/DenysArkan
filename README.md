@@ -1,4 +1,4 @@
-![Denys Arkan](https://media.licdn.com/dms/image/D4E16AQFwoRRhfM0GZA/profile-displaybackgroundimage-shrink_350_1400/0/1705862253759?e=1711584000&v=beta&t=zK9ecJ0CldMUb6cYkaS8nLMANyqX2ZRgRJkxxcvcYOI)  
+![Denys Arkan](https://media.licdn.com/dms/image/D4E16AQEHlsiABOqYsw/profile-displaybackgroundimage-shrink_350_1400/0/1705923740455?e=1711584000&v=beta&t=cmlsWqhyWEgkETzRPgw_yRvC6agX-EQuTsTV7h1M3L4)  
 
 <!--
 **DenysArkan/DenysArkan** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
