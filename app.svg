@@ -1,0 +1,311 @@
+<svg fill="none" viewBox="0 0 600 464" width="600" height="464" xmlns="http://www.w3.org/2000/svg">
+    <foreignObject width="100%" height="100%">
+        <div xmlns="http://www.w3.org/1999/xhtml">
+            <style>
+                :root {
+                    --main-blue: #001445;
+                    --accent-2: #0072bc;
+                    --decorative-4: #1e14a1;
+                    --ui-white: #fff;
+                    --shadow-1: 0px 4px 4px 0px rgba(43, 43, 43, 0.05);
+                    --shadow-2: 0px 4px 4px rgba(0, 0, 0, 0.25);
+                    --font-primary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+                        sans-serif;
+                    --font-secondary: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+                        Roboto, Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue",
+                        sans-serif;
+                    --spacer: 5px;
+                    --border-width: 8px;
+                    --border-radius-full: 50%;
+                }
+
+                * {
+                    margin: 0;
+                    padding: 0;
+                    color: inherit;
+                    text-decoration: none;
+                    list-style: none;
+                    outline: none;
+                    box-sizing: border-box;
+                    font-family: var(--font-secondary);
+                }
+
+                /* Main Layout */
+                .cv.cv--top {
+                    display: grid;
+                    gap: calc(var(--spacer) * 12);
+                    padding: calc(var(--spacer) * 12);
+                    grid-template-columns: auto;
+                    grid-template-rows: auto;
+                }
+
+                .cv__logo {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .cv__experience {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                }
+
+                .cv__name {
+                    text-align: center;
+                    margin: 0;
+                    font-size: 28px;
+                    line-height: 1;
+                    font-weight: bold;
+                    color: var(--decorative-4);
+                    font-family: var(--font-primary);
+                }
+
+                /* Experience Component*/
+                .experience {
+                    --circle-size: 170px;
+                    --circle-bg: var(--main-blue);
+                    position: relative;
+                }
+
+                .experience__circle {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center;
+                    justify-content: center;
+                    background: var(--circle-bg);
+                    color: var(--ui-white);
+                    width: calc(var(--circle-size) + var(--border-width));
+                    height: calc(var(--circle-size) + var(--border-width));
+                    border-radius: var(--border-radius-full);
+                    border: var(--border-width) solid var(--ui-white);
+                    box-shadow: var(--shadow-1);
+                    padding: calc(var(--spacer) * 2);
+                    gap: var(--spacer);
+                    position: relative;
+                }
+
+                .experience__title {
+                    font-family: var(--font-primary);
+                    text-transform: uppercase;
+                    font-weight: bold;
+                    font-size: 22px;
+                    line-height: 1;
+                    border-bottom: 1px solid var(--accent-2);
+                    padding-bottom: var(--spacer);
+                }
+
+                .experience__years {
+                    font-family: var(--font-primary);
+                    font-weight: 400;
+                    font-size: 14px;
+                    line-height: 1;
+                }
+
+                /* Particle Component*/
+                .particle {
+                    position: absolute;
+                    display: block;
+                    border-radius: var(--border-radius-full);
+                    width: var(--circle-size);
+                    height: var(--circle-size);
+                    background: var(--circle-bg);
+                    filter: drop-shadow(var(--shadow-2));
+                }
+
+                @keyframes intro {
+
+                    0%,
+                    75% {
+                        transform: translateY(-100vh);
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes intro-title {
+                    0% {
+                        transform: translateY(0);
+                    }
+
+                    75% {
+                        transform: translateY(50px);
+                    }
+
+                    100% {
+                        transform: translateY(0);
+                    }
+                }
+
+                @keyframes scale {
+
+                    0%,
+                    75% {
+                        scale: 0;
+                    }
+
+                    100% {
+                        scale: 1;
+                    }
+                }
+
+                /* @keyframes reveal {
+                                0% {
+                                translate: 0 100%;
+                                }
+                                100% {
+                                translate: 0 0;
+                                }
+                                } */
+                @keyframes orbit {
+                    0% {
+                        transform: rotate(0) translateX(0) rotate(0);
+                    }
+
+                    /* 25% {
+                                transform: rotate(150deg) translateX(70px) rotate(-140deg);
+                                } */
+                    75% {
+                        transform: rotate(504deg) translateX(70px) rotate(-500deg);
+                    }
+
+                    100% {
+                        transform: rotate(0) translateX(0) rotate(0);
+                    }
+                }
+
+                .animate-circle {
+                    animation: intro 1s cubic-bezier(0.25, 0.75, 0.5, 1.25) forwards;
+                }
+
+                .animate-name-title {
+                    /* animation: reveal 1.5s cubic-bezier(0.77, 0, 0.175, 1) 0.5s; */
+                    animation: intro-title 0.2s cubic-bezier(0.25, 0.75, 0.5, 1.25);
+                    animation-delay: 0.9s;
+                    animation-direction: alternate;
+                    animation-fill-mode: none;
+                }
+
+                .animate-particle {
+                    animation: scale 1s cubic-bezier(0.32, 2, 0.55, 0.27),
+                        orbit 4s 2s cubic-bezier(0.57, 0.21, 0.69, 1.25);
+                }
+            </style>
+            <section class="cv cv--top">
+                <header class="cv__logo">
+                    <img
+                        width="100"
+                        height="14"
+                        src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIHZpZXdCb3g9IjAgMCAxMDAgMTQiPgogIDxwYXRoIGZpbGw9IiMxMjE2NDMiIGQ9Ik00Mi45MjIgMTMuNDQyaC0zLjY4NlYuNjNoMy42ODZjLjkxMiAwIDEuNzU2LjE2IDIuNTIuNTA5YTUuODE2IDUuODE2IDAgMCAxIDIuMDExIDEuNDMzQTYuNDUgNi40NSAwIDAgMSA0OC43IDQuNjA3Yy4yOTUuNzYzLjQyOSAxLjU2Ni40MjkgMi40MjNzLS4xNDggMS42Ni0uNDMgMi40MjNhNi42NzIgNi42NzIgMCAwIDEtMS4yNDYgMi4wNDkgNS42OCA1LjY4IDAgMCAxLTIuMDEgMS40NDYgNi4zMTcgNi4zMTcgMCAwIDEtMi41Mi40OTVabS0yLjgxNS0uODg0aDIuODAyYzEuNTk1IDAgMi44ODItLjU2MiAzLjg4Ny0xLjY3M2E1LjIzOCA1LjIzOCAwIDAgMCAxLjA2LTEuNzRjLjI0LS42Ny4zNjEtMS4zNjYuMzYxLTIuMTE2IDAtLjczNi0uMTItMS40MzMtLjM2Mi0yLjEwMmE0LjkwNiA0LjkwNiAwIDAgMC0xLjA1OS0xLjc0Yy0xLjAxOC0xLjA4NS0yLjMwNS0xLjYzNC0zLjg4Ny0xLjYzNGgtMi44MDJ2MTEuMDA1Wm0xMC42NTcuODg0Vi42M2guODg1djEyLjgxM2gtLjg4NVptMTMuNjQ2IDBoLTQuNjM4YTYuMjgzIDYuMjgzIDAgMCAxLTMuMjMtLjg3IDYuMzg0IDYuMzg0IDAgMCAxLTIuMzQ2LTIuMzU3IDYuMzczIDYuMzczIDAgMCAxLS44NzItMy4yNjZjMC0xLjE2NS4yOTUtMi4yNS44NzItMy4yNGE2LjYyNyA2LjYyNyAwIDAgMSAyLjM0Ni0yLjM3Yy45OTEtLjU5IDIuMDY0LS44NyAzLjIzLS44N2E2LjQ0NiA2LjQ0NiAwIDAgMSA0LjcxOCAyLjA4OWwtLjY1Ni42MTVhNS40ODQgNS40ODQgMCAwIDAtMS44NS0xLjMxMiA1LjUxMyA1LjUxMyAwIDAgMC01IC4yODEgNS42NjggNS42NjggMCAwIDAtMi4wMzggMi4wMjIgNS40MjMgNS40MjMgMCAwIDAtLjc1IDIuNzg1IDUuNDcgNS40NyAwIDAgMCAuNzUgMi43OTggNS41IDUuNSAwIDAgMCAyLjAzOCAyLjAzNSA1LjM1OCA1LjM1OCAwIDAgMCAyLjc4OC43NjNoMy43MTNWNy45NjZINTkuMjV2LS44ODNoNS4xNDh2Ni4zNmguMDEzWm0yLjQ0IDBWLjYzaC44ODV2MTIuODEzaC0uODg1Wk04MC4yNDEuNjN2LjkxaC01LjA2N3YxMS45MDJoLS45MTFWMS41NGgtNS4wOTRWLjYzSDgwLjI0Wm0xLjE5MyA5LjU1OS0xLjUxNCAzLjI1M2gtLjk5Mkw4NC45NzMuNDdsNS42OTcgMTIuOTczaC0uOTY1bC0xLjQzNC0zLjI1M2gtNi44MzdabTMuNDk5LTcuNTI1TDgxLjg1IDkuMzA1aDYuMDE5bC0yLjkzNi02LjY0Wm02Ljk0NCAxMC43NzhWLjYzaC44ODR2MTEuOTNoNy4xOTl2Ljg4M2gtOC4wODNabS04MS4xLTYuNDhjMC0uOTEtLjI5NC0xLjY4Ny0uODctMi4zNTYtLjc1Mi0uODMtMS42NzYtMS4yNTktMi43ODktMS4yNTktLjc2NCAwLTEuNDYxLjIxNC0yLjA5MS42NDNBMy40MDQgMy40MDQgMCAwIDAgMy43IDUuNzE3Yy0uMTQ4LjQxNS0uMjI4LjgzLS4yMjggMS4yNDUgMCAuODcuMjk1IDEuNjQ3Ljg3MSAyLjMzLjcyNC44NDMgMS42NDkgMS4yNzEgMi43NzUgMS4yNzEgMS4xNCAwIDIuMDY0LS40MTUgMi43ODgtMS4yNTguNTc3LS42Ny44NzEtMS40NDYuODcxLTIuMzQzWm0zLjQ1OSAwYzAgMS43NC0uNTc3IDMuMjgtMS43NDMgNC41OTItMS4zMjcgMS41LTMuMTIzIDIuMjUtNS4zODggMi4yNS0yLjI1MiAwLTQuMDQ5LS43NS01LjM3Ni0yLjI1Qy41NzYgMTAuMjQyIDAgOC43MTYgMCA2Ljk2MmMwLS44MDMuMTYtMS42Mi40Ny0yLjQ1YTYuODI1IDYuODI1IDAgMCAxIDEuMjYtMi4xNTZDMy4wNTUuODU2IDQuODUyLjEwNyA3LjEwNC4xMDdjMi4yNjUgMCA0LjA2MS43NSA1LjM4OCAyLjI1IDEuMTY2IDEuMzI1IDEuNzQzIDIuODY1IDEuNzQzIDQuNjA1Wm05LjUwNCAyLjE0MmMwIDIuMTctLjk1MiAzLjU4OC0yLjg2OSA0LjI0NC0uNjcuMjI4LTEuMzguMzQ4LTIuMTQ0LjM0OC0xLjYwOSAwLTMuMDk3LS40ODItNC40NzgtMS40NTlsMS40MzUtMi42OTFjMS4wMDUuOTEgMS45OTcgMS4zNjYgMi45NjIgMS4zNjYuNDMgMCAuODA0LS4xMDcgMS4xLS4zMDhhMS4wOSAxLjA5IDAgMCAwIC41MjItLjk2NGMwLS4zNzUtLjIwMS0uNjk2LS41OS0uOTUtLjI5NS0uMTg4LS43NzctLjM5LTEuNDYtLjU3Ny0uODMyLS4yNC0xLjM1NS0uNDE1LTEuNTctLjUwOGEzLjYzOSAzLjYzOSAwIDAgMS0uODctLjUxYy0uNjg0LS41NjEtMS4wMzMtMS40MTgtMS4wMzMtMi41NTYgMC0xLjE5Mi4zNjItMi4xODMgMS4wNi0yLjk2LjgzLS45MjMgMS45My0xLjM3OCAzLjMxLTEuMzc4IDEuMzk0IDAgMi43NDguMzQ4IDQuMDc1IDEuMDQ0bC0xLjM0IDIuNTk3Yy0uNzM3LS41NzUtMS40NzUtLjg1Ni0yLjIxMi0uODU2YTEuOCAxLjggMCAwIDAtLjk2NS4yNjdjLS4zMjIuMjE1LS40ODMuNDgyLS40ODMuODMgMCAuMzM1LjIxNS42My42My44ODQuMTg4LjEyLjc1MS4zMDggMS43MDMuNTkgMS4xOC4zNDcgMi4wMjQuODMgMi41MzMgMS40NzIuNDcuNTIyLjY4NCAxLjIxOC42ODQgMi4wNzVabTguNTI1LTUuODI0aC00LjAyMXYyLjE5NmgzLjY2VjguMjZIMjguMjN2NS4wODdoLTMuMzUyVi40OTVoNy4zNzNWMy4yOGguMDEzWiIvPgo8L3N2Zz4K'
+                        alt="OSF Digital logo"
+                    />
+                </header>
+                <figure class="cv__experience">
+                    <figcaption class="experience">
+                        <hgroup
+                            class="experience__circle animate-circle"
+                            style="z-index: 10;"
+                        >
+                            <img
+                                width="75"
+                                height="52"
+                                class="experience__svg"
+                                src='data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGZpbGw9Im5vbmUiIGNsYXNzPSJleHBlcmllbmNlX19zdmciIHZpZXdCb3g9IjAgMCA3NSA1MiI+CiAgPHBhdGggc3Ryb2tlPSIjMzZERjU3IiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS13aWR0aD0iMyIgZD0iTTI0Ljc3IDI2YzAgNS42NDMgMS45IDExLjQ1IDUuNTM2IDE1Ljc2N2EyMy45MzcgMjMuOTM3IDAgMSAwLS4yNjctMzAuNTIxIi8+CiAgPGNpcmNsZSBjeD0iNDguNjEyIiBjeT0iMjYuMzQ1IiByPSIxMy4xMzQiIHN0cm9rZT0iIzMyMzI3RCIgc3Ryb2tlLXdpZHRoPSIzIi8+CiAgPHJlY3Qgd2lkdGg9IjMxLjk5MyIgaGVpZ2h0PSIzIiB5PSI0Ny45NSIgZmlsbD0iIzAwNzJCQyIgcng9IjEuNSIvPgogIDxyZWN0IHdpZHRoPSIzIiBoZWlnaHQ9IjI4LjY2OSIgeD0iMTIuNDY1IiB5PSIyMC45NDQiIGZpbGw9IiMwMDcyQkMiIHJ4PSIxLjUiLz4KICA8cmVjdCB3aWR0aD0iMyIgaGVpZ2h0PSIzOS4wNTYiIHg9IjIzLjI2OCIgeT0iMS40MTUiIGZpbGw9IiMyQUFDRTIiIHJ4PSIxLjUiLz4KICA8cmVjdCB3aWR0aD0iMjkuMDg0IiBoZWlnaHQ9IjMiIHk9IjE1LjU0MiIgZmlsbD0iIzJBQUNFMiIgcng9IjEuNSIgdHJhbnNmb3JtPSJyb3RhdGUoLTMwIDAgMTUuNTQyKSIvPgo8L3N2Zz4K'
+                                alt="10 years of experience"
+                            />
+
+                            <h2 class="experience__title">Years</h2>
+                            <h3 class="experience__years">Experience</h3>
+                        </hgroup>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #27c2d6;
+                                --circle-size: 6px;
+                                z-index: 10;
+                                top: 20px;
+                                left: 5%;
+                                animation-delay: 0.4s, 0.8s;
+                                animation-fill-mode: backwards, forwards;
+                                animation-direction: normal, reverse;
+                            "
+                        ></span>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #1e14a1;
+                                --circle-size: 48px;
+                                z-index: 9;
+                                bottom: 0;
+                                left: 20px;
+                                animation-delay: 0.1s, 0.5s;
+                                animation-fill-mode: backwards, backwards;
+                                animation-direction: normal, reverse;
+                            "
+                        ></span>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #fff;
+                                --circle-size: 12px;
+                                z-index: 10;
+                                left: -15px;
+                                bottom: 15px;
+                                animation-delay: 0.2s, 0.9s;
+                                animation-fill-mode: backwards, forwards;
+                                animation-direction: normal, normal;
+                            "
+                        ></span>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #36df57;
+                                --circle-size: 28px;
+                                z-index: 11;
+                                bottom: 20px;
+                                right: 15px;
+                                animation-delay: 0.3s, 0.5s;
+                                animation-fill-mode: backwards, forwards;
+                                animation-direction: normal, normal;
+                            "
+                        ></span>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #0099ff;
+                                --circle-size: 16px;
+                                z-index: 10;
+                                top: 30px;
+                                right: -10px;
+                                animation-delay: 0.3s, 0.8s;
+                                animation-fill-mode: backwards, forwards;
+                                animation-direction: normal, normal;
+                            "
+                        ></span>
+                        <span
+                            class="particle animate-particle particle__experience"
+                            style="
+                                --circle-bg: #01d7b5;
+                                --circle-size: 9px;
+                                z-index: 11;
+                                bottom: 10px;
+                                left: 30%;
+                                animation-delay: 0.1s, 0.3s;
+                                animation-fill-mode: backwards, backwards;
+                                animation-direction: normal, reverse;
+                            "
+                        ></span>
+                    </figcaption>
+                </figure>
+                <hgroup class="cv__name">
+                    <h1 class="cv__name-title animate-name-title">Denys Arkan</h1>
+                </hgroup>
+            </section>
+        </div>
+    </foreignObject>
+</svg>
